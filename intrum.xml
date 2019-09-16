@@ -8,7 +8,7 @@
 	<authorEmail>info@vsproger.ru</authorEmail>
 	<authorUrl>https://vsproger.ru</authorUrl>
 	<!--  Версия записывается в таблицу компонентов -->
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<!-- Описание необязательно -->
 	<description>Компонент для работы с API Intrum</description>
 
