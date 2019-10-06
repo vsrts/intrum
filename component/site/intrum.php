@@ -5,9 +5,9 @@ defined('_JEXEC') or die('Restricted access');
 
 // Подключаем логирование.
 JLog::addLogger(
-    array('text_file' => 'com_helloworld.php'),
+    array('text_file' => 'com_intrum.php'),
     JLog::ALL,
-    array('com_helloworld')
+    array('com_intrum')
 );
 
 //Подключаем библиотеку контроллера Joomla
