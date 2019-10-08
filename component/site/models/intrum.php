@@ -5,6 +5,16 @@ defined('_JEXEC') or die('Restricted access');
 
 class IntrumModelIntrum extends JModelItem{
 
+    protected function populateState()
+    {
+        $app = JFactory::getApplication();
+        // Получаем Id сообщения из Запроса.
+        $catId = $app->input->getInt('catId', 0);
+        // Добавляем Id сообщения в состояние модели.
+        $this->setState('message.catId', $catId);
+        parent::populateState();
+    }
+
     private $api;
     private function connectIntrum()
     {
@@ -21,10 +31,11 @@ class IntrumModelIntrum extends JModelItem{
 
     public function getItems(){
         $type = 7;
+        $catId = (!empty($catId)) ? $catId : (int) $this->getState('message.catId');
         $this->connectIntrum();
         $items = $this->api->getStockByFilter(array(
             'type' => $type,
-            'category' => 146,
+            'category' => $catId,
             'nested' => true,
         ));
         $fields = $this->api->getStockFields();
